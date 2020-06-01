@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-screen',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-screen.component.scss']
 })
 export class MainScreenComponent implements OnInit {
-
-  constructor() { }
+  isCollapsed = false;
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+  } 
+  navigateToAddComponent(){
+    this.router.navigate(['main/add-user']);
+  }
+  navigateToListComponent(){
+    this.router.navigate(['main/list-emp'])
   }
 
 }

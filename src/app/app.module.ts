@@ -1,35 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+  import { NzFormModule } from 'ng-zorro-antd/form';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NZ_I18N } from 'ng-zorro-antd/i18n';
-import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
+  import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { HttpClientJsonpModule } from '@angular/common/http';
 import en from '@angular/common/locales/en';
-import { LoginPageComponent } from './components/login-page/login-page.component';
-import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzCardModule } from 'ng-zorro-antd/card';
-import { NzLayoutModule } from 'ng-zorro-antd/layout';
-import { NzGridModule } from 'ng-zorro-antd/grid';
-import { NzPopoverModule } from 'ng-zorro-antd/popover';
-import { NzModalModule } from 'ng-zorro-antd/modal';
-import { NzMessageModule } from 'ng-zorro-antd/message';
-import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
-import { NzMenuModule } from 'ng-zorro-antd/menu';
-import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
-import { NzTagModule } from 'ng-zorro-antd/tag';
-import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
-import { NzDividerModule } from 'ng-zorro-antd/divider';
-import { NzSpinModule } from 'ng-zorro-antd/spin';
-import { NzAvatarModule } from 'ng-zorro-antd/avatar';
-import { MainScreenComponent } from './components/main-screen/main-screen.component';
-import { MainScreenEmpComponent } from './components/main-screen-emp/main-screen-emp.component';
 
+import { NZ_ICONS, NzIconModule } from 'ng-zorro-antd/icon';
+import { NZ_I18N, en_US } from 'ng-zorro-antd/i18n';
+import { IconDefinition } from '@ant-design/icons-angular';
+import * as AllIcons from '@ant-design/icons-angular/icons';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import { MainScreenComponent } from './components/main-screen/main-screen.component';
+import { MainDashboardComponent } from './components/main-dashboard/main-dashboard.component';
+import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
+import { MainScreenEmpComponent } from './components/main-screen-emp/main-screen-emp.component';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { ListEmployeeComponent } from './components/list-employee/list-employee.component';
 registerLocaleData(en);
 
 @NgModule({
@@ -37,7 +35,10 @@ registerLocaleData(en);
     AppComponent,
     LoginPageComponent,
     MainScreenComponent,
-    MainScreenEmpComponent
+    MainDashboardComponent,
+    AddEmployeeComponent,
+    MainScreenEmpComponent,
+    ListEmployeeComponent
   ],
   imports: [
     BrowserModule,
@@ -45,10 +46,18 @@ registerLocaleData(en);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    NzFormModule,
+    NzMenuModule,
+    FormsModule,
+    ReactiveFormsModule,
+    DragDropModule,
+    ScrollingModule,
+    HttpClientJsonpModule,
     NzButtonModule,
-    NzIconModule,NzCardModule,NzLayoutModule,NzGridModule,NzPopoverModule,NzModalModule,
-    NzMessageModule,NzSpinModule
-
+    NzIconModule,
+    NzLayoutModule,
+    NzInputModule,NzTableModule
+    
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
