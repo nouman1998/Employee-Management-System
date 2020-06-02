@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, NgForm } from '@angular/forms';
 import { FormGroup, Validators } from '@angular/forms';
+import { employee } from './employee';
+import { MainServiceService } from 'src/app/services/main-service.service';
+import { NzMessageService } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-add-employee',
@@ -17,15 +20,28 @@ export class AddEmployeeComponent implements OnInit {
       this.validateForm.controls[i].updateValueAndValidity();
     }
   }
-
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private service: MainServiceService, private message: NzMessageService) {}
+  addEmployee = new employee;
 
   ngOnInit(): void {
-    this.validateForm = this.fb.group({
-      userName: [null, [Validators.required]],
-      password: [null, [Validators.required]],
-      remember: [true]
-    });
+    this.validation();
   }
 
+  validation(){
+    this.validateForm = this.fb.group({
+      name: [null, [Validators.required]],
+      mobNum: [null, [Validators.required]],
+      email: [null, [Validators.required]],
+      address: [null, [Validators.required]],
+      pay: [null, [Validators.required]],
+      resume: [null, [Validators.required]],
+      allowances: [null, [Validators.required]],
+    });
+  }
+  postEmployee(){
+   console.log(this.addEmployee)
+   this.service.postEmployee(this.addEmployee).subscribe(d=>{
+   this.message.success("Employee Added Successfully",{nzDuration:3000})
+ })
+  }
 }

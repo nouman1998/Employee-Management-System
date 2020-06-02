@@ -12,6 +12,7 @@ export class MainServiceService {
 
   private getLoginCriedentialsURL =this.baseurl+"login";
   private getEmpListsURL= this.baseurl+'employees'
+  private postEmpURL= this.baseurl+'employees'
   private postDepartmentURL= this.baseurl+'department';
   private getDepartmentURL = this.baseurl+'department';
   private deleteDepartmentURL=this.baseurl+'department/';
@@ -22,6 +23,9 @@ export class MainServiceService {
   }
   public getEmpList():Observable<any>{
     return this.http.get(this.getEmpListsURL); 
+  }
+  public postEmployee(obj):Observable<any>{
+    return this.http.post(this.postEmpURL,obj);
   }
 
   public postDepartment(obj):Observable<any>{

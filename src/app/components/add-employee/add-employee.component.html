@@ -1,37 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<nz-card nzTitle="Add Employee" style="padding: 10px; text-align: left;">
+  <br>
+  <form nz-form [nzLayout]="'vertical'" [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <div nz-row>
+    <div nz-col nzSpan="10">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <nz-input-group nzPrefixIcon="">
+            <input formControlName="name" nz-input type="text" [(ngModel)]= "addEmployee.name" placeholder="Name" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div nz-col nzSpan="10" nzOffset="4">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your Mobile Number!">
+          <nz-input-group nzPrefixIcon="">
+            <input formControlName="mobNum" nz-input type="text" [(ngModel)]= "addEmployee.mobileNumber" placeholder="Mobile Number" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
 
+  <div nz-row>
+    <div nz-col nzSpan="10">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your Email!">
+          <nz-input-group nzPrefixIcon="">
+            <input formControlName="email" nz-input type="email" [(ngModel)]= "addEmployee.email" placeholder="Email" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
 
+    <div nz-col nzSpan="10" nzOffset="4">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your Address!">
+          <nz-input-group nzPrefixIcon="">
+            <input formControlName="address" nz-input type="text" [(ngModel)]= "addEmployee.address" placeholder="Address" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
 
-  <form nz-form [nzLayout]="'inline'" [formGroup]="validateForm" (ngSubmit)="submitForm()">
-    <nz-form-item>
-      <nz-form-control nzErrorTip="Please input your username!">
-        <nz-input-group nzPrefixIcon="user">
-          <input formControlName="userName" nz-input placeholder="Username" />
-        </nz-input-group>
-      </nz-form-control>
-    </nz-form-item>
-    <nz-form-item>
-      <nz-form-control nzErrorTip="Please input your Password!">
-        <nz-input-group nzPrefixIcon="lock">
-          <input formControlName="password" nz-input type="password" placeholder="Password" />
-        </nz-input-group>
-      </nz-form-control>
-    </nz-form-item>
-    <nz-form-item>
-      <nz-form-control>
-        <button nz-button nzType="primary" [disabled]="!validateForm.valid">Log in</button>
-      </nz-form-control>
-    </nz-form-item>
-  </form>
+  <div nz-row>
+    <div nz-col nzSpan="10">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your Pay!">
+          <nz-input-group nzPrefixIcon="">
+            <input formControlName="pay" nz-input type="text" [(ngModel)]= "addEmployee.pay" placeholder="Pay" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
 
+    <div nz-col nzSpan="10" nzOffset="4">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your Resume!">
+          <nz-input-group nzPrefixIcon="">
+            <input formControlName="resume" nz-input type="file" [(ngModel)]= "addEmployee.resume" placeholder="Resume" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
 
-  
-</body>
-</html>
+  <div nz-row>
+    <div nz-col nzSpan="10">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your Allowances!">
+          <nz-input-group nzPrefixIcon="">
+            <input formControlName="allowances" nz-input type="text" [(ngModel)]= "addEmployee.allowances" placeholder="Allowances" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <!-- <div nz-col nzSpan="10" nzOffset="4">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please select Department!">
+          <nz-input-group nzPrefixIcon="">
+            <input formControlName="department" nz-input type="text" placeholder="Department" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+    </div> -->
+  </div>
+  <nz-form-item>
+    <nz-form-control>
+      <button nz-button nzType="primary" (click)="postEmployee()" [disabled]="!validateForm.valid">Submit</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
+</nz-card>
