@@ -18,5 +18,12 @@ export class MainScreenComponent implements OnInit {
   navigateToListComponent(){
     this.router.navigate(['main/list-emp'])
   }
+  navigateToAddDepartment(){
+    this.router.navigate(['main/add-dept'])
+  }
+  navigateToListDepartment(){
+
+    this.router.navigate(['main/list-dept'])
+  }
 
 }
