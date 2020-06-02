@@ -1,0 +1,23 @@
+<nz-table #basicTable [nzData]="data">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{ data.id }}</td>
+        <td>{{ data.name }}</td>
+        <td>{{ data.description }}</td>
+       
+        <td>
+        <span (click)="editDepartment(data.id)">  <a>Edit</a></span>
+        &nbsp; | &nbsp; 
+       <span (click)="deleteDepartment(data.id)">   <a>Delete</a></span>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>

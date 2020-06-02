@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body >
+    <div style="background: #ECECEC;padding:30px; height:100%">
+        <nz-card style="width:350px;margin-left: 32%;" [nzBordered]="false" nzTitle="Add Department" >
+
+
+
+            <div >
+                <form nz-form  [formGroup]="validateForm"  class="login-form"  >
+                    <nz-form-item>
+                      <nz-form-control nzErrorTip="Please input your Department Name!">
+                        <nz-input-group nzPrefixIcon="user">
+                          <input type="text" nz-input formControlName="userName" placeholder="Department Name" name="name" [(ngModel)]="depart.name"/>
+                        </nz-input-group>
+                      </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                      <nz-form-control nzErrorTip="Please input your Description!">
+                        <nz-input-group nzPrefixIcon="diff">
+                          <input name="description" type="text" nz-input formControlName="password" placeholder="Description" [(ngModel)]="depart.description"/>
+                        </nz-input-group>
+                      </nz-form-control>
+                    </nz-form-item>
+                    
+                    <button [disabled]="validate()" nz-button (click)="submitForm()" class="login-form-button login-form-margin" [nzType]="'primary'">Submit</button>
+                   
+                  </form>
+                </div>
+          </nz-card>
+      </div>
+    
+   
+</body>
+
+</html>

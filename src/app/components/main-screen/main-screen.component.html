@@ -9,10 +9,13 @@
               <!-- <li nz-menu-item></li> -->
             </ul>
           </li>
-        <li nz-menu-item>
-          <i nz-icon nzType="video-camera"></i>
-          <span>nav 2</span>
-        </li>
+          <li nz-submenu nzTitle="Department" nzIcon="border-outer">
+            <ul>
+             <span (click)="navigateToAddDepartment()" > <li nz-menu-item>Add Department</li></span>
+              <span (click)="navigateToListDepartment()"> <li nz-menu-item > List Department</li></span>
+              <!-- <li nz-menu-item></li> -->
+            </ul>
+          </li>
         <li nz-menu-item>
           <i nz-icon nzType="upload"></i>
           <span>nav 3</span>
