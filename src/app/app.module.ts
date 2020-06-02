@@ -28,6 +28,10 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { ListEmployeeComponent } from './components/list-employee/list-employee.component';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzMessageModule } from 'ng-zorro-antd/message';
+
+
 registerLocaleData(en);
 
 @NgModule({
@@ -56,7 +60,9 @@ registerLocaleData(en);
     NzButtonModule,
     NzIconModule,
     NzLayoutModule,
-    NzInputModule,NzTableModule
+    NzInputModule,NzTableModule,
+    NzCardModule,
+    NzMessageModule
     
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

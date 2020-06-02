@@ -31,8 +31,6 @@ export class LoginPageComponent implements OnInit {
     console.log(this.LoginInfo)
     this.LoginInfo.map(e => {
 
-
-
       if (this.login.username === e.username && this.login.password === e.password && e.role === "ADMIN" && !this.isLogin) {
         this.route.navigate(['main']);
         this.isLogin = true;

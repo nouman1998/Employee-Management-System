@@ -12,12 +12,16 @@ export class MainServiceService {
 
   private getLoginCriedentialsURL =this.baseurl+"login";
   private getEmpListsURL= this.baseurl+'employees'
+  private postEmpURL= this.baseurl+'employees'
 
   public getLoginCriedential():Observable<any>{
     return this.http.get(this.getLoginCriedentialsURL);
   }
   public getEmpList():Observable<any>{
     return this.http.get(this.getEmpListsURL); 
+  }
+  public postEmployee(obj):Observable<any>{
+    return this.http.post(this.postEmpURL,obj);
   }
 
 
