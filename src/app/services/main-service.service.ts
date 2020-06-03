@@ -13,6 +13,8 @@ export class MainServiceService {
   private getLoginCriedentialsURL =this.baseurl+"login";
   private getEmpListsURL= this.baseurl+'employees'
   private postEmpURL= this.baseurl+'employees'
+  private deleteEmpURL = this.baseurl+'employees/'
+  private getEmpByIdURL = this.baseurl+'employees/'
   private postDepartmentURL= this.baseurl+'department';
   private getDepartmentURL = this.baseurl+'department';
   private deleteDepartmentURL=this.baseurl+'department/';
@@ -27,22 +29,27 @@ export class MainServiceService {
   public postEmployee(obj):Observable<any>{
     return this.http.post(this.postEmpURL,obj);
   }
-
+  public deleteEmployee(id):Observable<any>{
+    return this.http.delete(this.deleteEmpURL+id);
+  }
+  public updateEmployee(id,obj):Observable<any>{
+    return this.http.put(this.deleteEmpURL+id,obj);
+  }
+  public getEmployeeByID(id):Observable<any>{
+    return this.http.get(this.getEmpByIdURL+id);
+  }
   public postDepartment(obj):Observable<any>{
     return this.http.post(this.postDepartmentURL,obj);
   }
-
   public getDepartments():Observable<any>{
     return this.http.get(this.getDepartmentURL);
   }
-
   public deleteDepartment(id):Observable<any>{
     return this.http.delete(this.deleteDepartmentURL+id);
   }
   public getDepartmentByID(id):Observable<any>{
     return this.http.get(this.getDepartmentByIdURL+id);
   }
-
   public updateDepartment(id,obj):Observable<any>{
     return this.http.put(this.deleteDepartmentURL+id,obj);
   }
