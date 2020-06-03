@@ -17,25 +17,25 @@ validateForm!: FormGroup;
 id
   depart = new Department();
   ngOnInit(){
+    this.validation();
+    this.getByID();
 
+
+  }
+
+  getByID(){
     this.id = this.activateRoute.snapshot.params['id'];
     if (this.id) {
-    
       this.getDepartments();
-
-
     }
+  }
 
-    
+  validation(){
     this.validateForm = this.fb.group({
       userName: [ [Validators.required]],
       password: [ [Validators.required]],
      
     });
-
-
-
-
   }
   getDepartments() {
     this.service.getDepartmentByID(this.id).subscribe(d=>{
@@ -45,7 +45,7 @@ id
   }
   submitForm(){
     if(!this.id){
-this.service.postDepartment(this.depart).subscribe(d=>{
+    this.service.postDepartment(this.depart).subscribe(d=>{
     this.message.success("Department Added Sucessfully",{nzDuration:3000});
     this.depart.name="";
     this.depart.description="";

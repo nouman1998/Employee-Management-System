@@ -18,7 +18,8 @@ const routes: Routes = [
     {path:'list-emp',component:ListEmployeeComponent},
     {path:'add-dept',component:AddDepartmentComponent},
     {path:'list-dept',component:ListDepartmentComponent},
-    {path:'add-dept/:id',component:AddDepartmentComponent}
+    {path:'add-dept/:id',component:AddDepartmentComponent},
+    {path: 'add-user/:id', component: AddEmployeeComponent}
   ]},
   {path:'mainemp',component:MainScreenEmpComponent},
 

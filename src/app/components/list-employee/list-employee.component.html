@@ -1,23 +1,35 @@
 <nz-table #basicTable [nzData]="listOfData">
     <thead>
       <tr>
+        <th>ID</th>
         <th>Name</th>
         <th>Mobile</th>
-        <th>Department</th>
-        <th>Salary</th>
         <th>Email</th>
+        <th>Address</th>
+        <th>Pay</th>
+        <th>Resume</th>
+        <th>Allowances</th>
+        <th>Department</th>
+        <th>Action</th>
+
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let data of basicTable.data">
+        <td>{{ data.id }}</td>
         <td>{{ data.name }}</td>
-        <td>{{ data.age }}</td>
-        <td>{{ data.address }}</td>
+        <td>{{ data.mobileNumber }}</td>
+        <td>{{ data.email }}</td>
+        <td>{{ data.address}}</td>
+        <td>{{ data.pay }}</td>
+        <td>{{ data.resume }}</td>
+        <td>{{ data.allowances}}</td>
+        <td>{{data.department}}</td>
         <td>
-          <a>Action 一 {{ data.name }}</a>
-         
-          <a>Delete</a>
-        </td>
+          <span (click)="editEmployee(data.id)">  <a>Edit</a></span>
+          &nbsp; | &nbsp; 
+         <span (click)="deleteEmployee(data.id)">   <a>Delete</a></span>
+          </td>
       </tr>
     </tbody>
   </nz-table>

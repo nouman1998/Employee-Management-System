@@ -32,6 +32,10 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { AddDepartmentComponent } from './components/add-department/add-department.component';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { ListDepartmentComponent } from './components/list-department/list-department.component';
+import { NzDropDownModule  } from 'ng-zorro-antd';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+
+
 registerLocaleData(en);
 
 @NgModule({
@@ -65,7 +69,9 @@ registerLocaleData(en);
     NzInputModule,
     NzTableModule,
     NzCardModule,
-    NzMessageModule
+    NzMessageModule,
+    NzDropDownModule,
+    NzSelectModule
     
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

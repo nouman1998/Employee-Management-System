@@ -6,4 +6,5 @@ export class employee{
     pay: number
     resume: string
     allowances: number
+    department:string
 }
