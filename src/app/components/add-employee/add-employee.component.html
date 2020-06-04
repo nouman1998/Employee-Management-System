@@ -87,6 +87,18 @@
       </nz-form-item>
     </div>
   </div>
+  <div nz-row>
+    <div nz-col nzSpan="10" >
+      <nz-form-item>
+          <!-- <nz-form-label nzFor="email">Departments</nz-form-label>
+          <br> -->
+          <nz-select name="jobs" formControlName="jobs" nzSize="default" [(ngModel)]="addEmployee.job" class="phone-select"
+            nzPlaceHolder="Select a Job" required>
+            <nz-option *ngFor="let item of jobs" nzLabel={{item.jobcode}} nzValue="{{item.jobcode}}"></nz-option>
+          </nz-select>
+      </nz-form-item>
+    </div>
+  </div>
   <nz-form-item>
     <nz-form-control>
       <button nz-button nzType="primary" (click)="postEmployee()" [disabled]="!validateForm.valid" style="width: 70%; margin-left: 15%;">Submit</button>

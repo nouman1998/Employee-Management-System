@@ -7,4 +7,5 @@ export class employee{
     resume: string
     allowances: number
     department:string
+    job:string
 }
