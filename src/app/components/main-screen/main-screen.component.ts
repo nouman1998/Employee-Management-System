@@ -25,5 +25,11 @@ export class MainScreenComponent implements OnInit {
 
     this.router.navigate(['main/list-dept'])
   }
+  navigateToAddJob(){
+    this.router.navigate(['main/add-job'])
+  }
+  navigateToListJob(){
+    this.router.navigate(['main/list-job'])
+  }
 
 }

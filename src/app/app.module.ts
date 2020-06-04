@@ -34,6 +34,8 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
 import { ListDepartmentComponent } from './components/list-department/list-department.component';
 import { NzDropDownModule  } from 'ng-zorro-antd';
 import { NzSelectModule } from 'ng-zorro-antd/select';
+import { AddJobComponent } from './components/add-job/add-job.component';
+import { ListJobComponent } from './components/list-job/list-job.component';
 
 
 registerLocaleData(en);
@@ -48,7 +50,9 @@ registerLocaleData(en);
     MainScreenEmpComponent,
     ListEmployeeComponent,
     AddDepartmentComponent,
-    ListDepartmentComponent
+    ListDepartmentComponent,
+    AddJobComponent,
+    ListJobComponent
   ],
   imports: [
     BrowserModule,

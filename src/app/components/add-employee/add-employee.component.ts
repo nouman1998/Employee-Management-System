@@ -14,6 +14,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class AddEmployeeComponent implements OnInit {
 
   departments=[];
+  jobs=[];
   validateForm!: FormGroup;
   id
 
@@ -29,6 +30,7 @@ export class AddEmployeeComponent implements OnInit {
   ngOnInit(): void {
     this.validation();
     this.getDepartments();
+    this.getJobs();
     this.getById();
   }
 
@@ -42,6 +44,7 @@ export class AddEmployeeComponent implements OnInit {
       resume: [null, [Validators.required]],
       allowances: [null, [Validators.required]],
       department: [null, [Validators.required]],
+      jobs: [null,[Validators.required]]
 
     });
   }
@@ -80,6 +83,12 @@ export class AddEmployeeComponent implements OnInit {
     })
   }
 
+  getJobs(){
+    this.service.getJob().subscribe(d=>{
+       this.jobs=d;
+    })
+  }
+
   getEmployeeById(){
     this.service.getEmployeeByID(this.id).subscribe(d=>{
       this.addEmployee.name = d.name;
@@ -90,6 +99,7 @@ export class AddEmployeeComponent implements OnInit {
       this.addEmployee.resume=d.resume;
       this.addEmployee.allowances=d.allowances;
       this.addEmployee.department=d.department;
+      this.addEmployee.job = d.job;
     })
   }
   getById(){

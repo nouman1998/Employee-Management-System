@@ -8,18 +8,24 @@ import { MainDashboardComponent } from './components/main-dashboard/main-dashboa
 import { ListEmployeeComponent } from './components/list-employee/list-employee.component';
 import { AddDepartmentComponent } from './components/add-department/add-department.component';
 import { ListDepartmentComponent } from './components/list-department/list-department.component';
+import { AddJobComponent } from './components/add-job/add-job.component';
+import { ListJobComponent } from './components/list-job/list-job.component';
 
 
 const routes: Routes = [
   {path:'',component:LoginPageComponent},
-  {path:'main',component:MainScreenComponent ,children:[
+  {path:'main',component:MainScreenComponent , 
+  children:[
     {path:'',component:MainDashboardComponent},
     {path:'add-user',component:AddEmployeeComponent},
     {path:'list-emp',component:ListEmployeeComponent},
     {path:'add-dept',component:AddDepartmentComponent},
     {path:'list-dept',component:ListDepartmentComponent},
     {path:'add-dept/:id',component:AddDepartmentComponent},
-    {path: 'add-user/:id', component: AddEmployeeComponent}
+    {path: 'add-user/:id', component: AddEmployeeComponent},
+    {path: 'add-job', component: AddJobComponent},
+    {path:'list-job', component: ListJobComponent},
+    {path:'add-job/:id',component:AddJobComponent}
   ]},
   {path:'mainemp',component:MainScreenEmpComponent},
 

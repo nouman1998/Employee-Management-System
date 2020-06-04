@@ -10,6 +10,7 @@
         <th>Resume</th>
         <th>Allowances</th>
         <th>Department</th>
+        <th>Job Code</th>
         <th>Action</th>
 
       </tr>
@@ -24,7 +25,8 @@
         <td>{{ data.pay }}</td>
         <td>{{ data.resume }}</td>
         <td>{{ data.allowances}}</td>
-        <td>{{data.department}}</td>
+        <td>{{ data.department}}</td>
+        <td>{{ data.job}}</td>
         <td>
           <span (click)="editEmployee(data.id)">  <a>Edit</a></span>
           &nbsp; | &nbsp; 
