@@ -59,7 +59,7 @@ registerLocaleData(en);
     ListDepartmentComponent,
 
     SalaryCodeAddComponent,
-    SalaryCodeListComponent
+    SalaryCodeListComponent,
 
     AddJobComponent,
     ListJobComponent
