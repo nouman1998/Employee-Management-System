@@ -10,11 +10,15 @@ import { Router } from '@angular/router';
 export class ListDepartmentComponent implements OnInit {
 
   constructor(private service:MainServiceService,private router:Router) { }
-data
+  data
   ngOnInit(): void {
+    this.getDepartmentList();
+  }
+
+  getDepartmentList(){
     this.service.getDepartments().subscribe(d=>{
-        this.data=d;
-    })
+      this.data=d;
+  })
   }
 
   editDepartment(id){

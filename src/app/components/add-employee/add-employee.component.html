@@ -76,19 +76,32 @@
         </nz-form-control>
       </nz-form-item>
     </div>
-    <!-- <div nz-col nzSpan="10" nzOffset="4">
+    <div nz-col nzSpan="10" nzOffset="4">
       <nz-form-item>
-        <nz-form-control nzErrorTip="Please select Department!">
-          <nz-input-group nzPrefixIcon="">
-            <input formControlName="department" nz-input type="text" placeholder="Department" />
-          </nz-input-group>
-        </nz-form-control>
+          <!-- <nz-form-label nzFor="email">Departments</nz-form-label>
+          <br> -->
+          <nz-select name="department" formControlName="department" nzSize="default" [(ngModel)]="addEmployee.department" class="phone-select"
+            nzPlaceHolder="Select a Department" required>
+            <nz-option *ngFor="let item of departments" nzLabel={{item.name}} nzValue="{{item.id}}"></nz-option>
+          </nz-select>
       </nz-form-item>
-    </div> -->
+    </div>
+  </div>
+  <div nz-row>
+    <div nz-col nzSpan="10" >
+      <nz-form-item>
+          <!-- <nz-form-label nzFor="email">Departments</nz-form-label>
+          <br> -->
+          <nz-select name="jobs" formControlName="jobs" nzSize="default" [(ngModel)]="addEmployee.job" class="phone-select"
+            nzPlaceHolder="Select a Job" required>
+            <nz-option *ngFor="let item of jobs" nzLabel={{item.jobcode}} nzValue="{{item.jobcode}}"></nz-option>
+          </nz-select>
+      </nz-form-item>
+    </div>
   </div>
   <nz-form-item>
     <nz-form-control>
-      <button nz-button nzType="primary" (click)="postEmployee()" [disabled]="!validateForm.valid">Submit</button>
+      <button nz-button nzType="primary" (click)="postEmployee()" [disabled]="!validateForm.valid" style="width: 70%; margin-left: 15%;">Submit</button>
     </nz-form-control>
   </nz-form-item>
 </form>
