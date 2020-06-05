@@ -8,8 +8,13 @@ import { MainDashboardComponent } from './components/main-dashboard/main-dashboa
 import { ListEmployeeComponent } from './components/list-employee/list-employee.component';
 import { AddDepartmentComponent } from './components/add-department/add-department.component';
 import { ListDepartmentComponent } from './components/list-department/list-department.component';
+
+import { SalaryCodeAddComponent } from './components/salary-code-add/salary-code-add.component';
+import { SalaryCodeListComponent } from './components/salary-code-list/salary-code-list.component';
+
 import { AddJobComponent } from './components/add-job/add-job.component';
 import { ListJobComponent } from './components/list-job/list-job.component';
+
 
 
 const routes: Routes = [
@@ -22,10 +27,16 @@ const routes: Routes = [
     {path:'add-dept',component:AddDepartmentComponent},
     {path:'list-dept',component:ListDepartmentComponent},
     {path:'add-dept/:id',component:AddDepartmentComponent},
+
+    {path:'salary-add',component:SalaryCodeAddComponent},
+    {path:'salary-list',component:SalaryCodeListComponent},
+    {path:'salary-add/:id',component:SalaryCodeAddComponent},
+
     {path: 'add-user/:id', component: AddEmployeeComponent},
     {path: 'add-job', component: AddJobComponent},
     {path:'list-job', component: ListJobComponent},
     {path:'add-job/:id',component:AddJobComponent}
+
   ]},
   {path:'mainemp',component:MainScreenEmpComponent},
 

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <div style="background: #ECECEC;padding:30px; height:100%">
+        <nz-card style="width:700px;margin-left: 15%;" [nzBordered]="false" nzTitle="Add Salary Code">
+            <form nz-form [formGroup]="validateForm" class="login-form">
+
+                <div nz-row>
+                    <div nz-col nzSpan="7">
+                        <nz-form-item>
+                            <nz-form-control nzErrorTip="Please input your Salary Code!">
+                                <nz-input-group nzPrefixIcon="user">
+                                    <input type="text" nz-input name="code" placeholder="Department Name"
+                                        [(ngModel)]="salaries.code" [ngModelOptions]="{standalone: true}" />
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div nz-col nzSpan="7" nzOffset="1">
+                        <nz-form-item>
+                            <nz-form-control nzErrorTip="Please input your Code Description!">
+                                <nz-input-group nzPrefixIcon="user">
+                                    <input type="text" nz-input name="baseSalary" placeholder="Code Description"
+                                        [(ngModel)]="salaries.codeDescription" [ngModelOptions]="{standalone: true}" />
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div nz-col nzSpan="7" nzOffset="1">
+                        <nz-form-item>
+                            <nz-form-control nzErrorTip="Please input your Basic Salary!">
+                                <nz-input-group nzPrefixIcon="user">
+                                    
+                                    <input type="number" nz-input name="baseSalary" placeholder="Base Salary"(change)="gettingValuesFromDynamicForms()"
+                                        [(ngModel)]="salaries.basicSalary" [ngModelOptions]="{standalone: true}" />
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+
+                <hr style="padding-bottom: 15px;">
+
+                <div formArrayName="allowances">
+                <div *ngFor="let item of allowances.controls; let i=index;" >
+                   
+                    <div nz-row [formGroupName]="i">
+                        <div nz-col nzSpan="7">
+                            <nz-form-item>
+                                <nz-form-control nzErrorTip="Please input your Salary Code!">
+
+                                    <nz-input-group >
+
+                                        <nz-select formControlName="preFrequency" [nzSize]="sizeSelect" nzPlaceHolder="Pre Frequency">
+                                            <nz-option  nzLabel="Bi-Weekly" nzValue="Bi-Weekly"></nz-option>
+                                            <nz-option  nzLabel="Monthly" nzValue="Monthly"></nz-option>
+                                            <nz-option  nzLabel="Weekly" nzValue="Weekly"></nz-option>
+                                            <nz-option  nzLabel="Yearly" nzValue="Yearly"></nz-option>
+                                            <nz-option  nzLabel="One Time" nzValue="One time"></nz-option>
+                                            <nz-option  nzLabel="Other" nzValue="Other"></nz-option>
+                                          </nz-select>
+                                        <!-- <input type="text" nz-input formControlName="preFrequency"
+                                            placeholder="Pre Frequency" /> -->
+                                    </nz-input-group>
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+
+                        <div nz-col nzSpan="7" nzOffset="1">
+                            <nz-form-item>
+                                <nz-form-control nzErrorTip="Please input your Salary Code!">
+                                    <nz-input-group >
+                                        <!-- <input type="text" nz-input formControlName="amountType"
+                                            placeholder="Amount Type" /> -->
+
+                                            <nz-select formControlName="amountType" [nzSize]="sizeSelect" nzPlaceHolder="Amount Type">
+                                                <nz-option  nzLabel="Allowances" nzValue="Allowances"></nz-option>
+                                                <nz-option  nzLabel="Detuction" nzValue="Detuction"></nz-option>
+                                                <nz-option  nzLabel="Bonus" nzValue="Bonus"></nz-option>
+                                               
+                                                <nz-option  nzLabel="Other" nzValue="Other"></nz-option>
+                                              </nz-select>
+                                    </nz-input-group>
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div nz-col nzSpan="7" nzOffset="1">
+                            <nz-form-item>
+                                <nz-form-control nzErrorTip="Please input your Salary Code!">
+                                    <nz-input-group nzPrefixIcon="dollar">
+                                        <input (change)="gettingValuesFromDynamicForms()" type="text" nz-input formControlName="amount"
+                                            placeholder="Amount" />
+                                    </nz-input-group>
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+               
+
+                <button nz-button (click)="Add()" nzType="primary" [nzSize]="size" nzShape="circle"><i nz-icon nzType="plus"></i></button>
+                <!-- <button >Add</button> -->
+            
+
+
+                <div>
+                    <nz-form-item>
+                        <nz-form-control nzErrorTip="Please input your Basic Salary!">
+                            <nz-input-group nzPrefixIcon="user">
+                                <input [disabled]="true"  type="text" nz-input name="grossAmount" placeholder="Gross Amount"
+                                    [ngModelOptions]="{standalone: true}" [(ngModel)]="salaries.grossAmount" />
+                            </nz-input-group>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+            
+                <button nz-button nzType="primary" (click)="submit()">Submit</button>
+            </form>
+
+
+        </nz-card>
+    </div>
+</body>
+
+</html>

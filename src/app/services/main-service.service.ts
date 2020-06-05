@@ -19,10 +19,17 @@ export class MainServiceService {
   private getDepartmentURL = this.baseurl+'department';
   private deleteDepartmentURL=this.baseurl+'department/';
   private getDepartmentByIdURL = this.baseurl+'department/';
+
+  private getSalaryCodesURL= this.baseurl+'salary-code'; 
+  private postSalaryCodeURL= this.baseurl+'salary-code'
+
+  private postAllowancesURL= this.baseurl+'allowances'
+
   private postJobURL = this.baseurl+'job';
   private getJobURL = this.baseurl+'job';
   private deleteJobURL = this.baseurl+'job/';
   private getJobByIdURL = this.baseurl+'job/';
+
 
   public getLoginCriedential():Observable<any>{
     return this.http.get(this.getLoginCriedentialsURL);
@@ -72,5 +79,18 @@ export class MainServiceService {
   public getJobById(id):Observable<any>{
     return this.http.get(this.getJobByIdURL+id);
   }
+
+  public getSalaryCodes():Observable<any>{
+    return this.http.get(this.getSalaryCodesURL);
+  }
+
+  public postSalaryCode(obj):Observable<any>{
+    return this.http.post(this.postSalaryCodeURL,obj);
+  }
+
+  public postAllowances(obj):Observable<any>{
+    return this.http.post(this.postAllowancesURL,obj);
+  }
+  
 
 }
