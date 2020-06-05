@@ -8,6 +8,8 @@ import { MainDashboardComponent } from './components/main-dashboard/main-dashboa
 import { ListEmployeeComponent } from './components/list-employee/list-employee.component';
 import { AddDepartmentComponent } from './components/add-department/add-department.component';
 import { ListDepartmentComponent } from './components/list-department/list-department.component';
+import { SalaryCodeAddComponent } from './components/salary-code-add/salary-code-add.component';
+import { SalaryCodeListComponent } from './components/salary-code-list/salary-code-list.component';
 
 
 const routes: Routes = [
@@ -18,7 +20,10 @@ const routes: Routes = [
     {path:'list-emp',component:ListEmployeeComponent},
     {path:'add-dept',component:AddDepartmentComponent},
     {path:'list-dept',component:ListDepartmentComponent},
-    {path:'add-dept/:id',component:AddDepartmentComponent}
+    {path:'add-dept/:id',component:AddDepartmentComponent},
+    {path:'salary-add',component:SalaryCodeAddComponent},
+    {path:'salary-list',component:SalaryCodeListComponent},
+    {path:'salary-add/:id',component:SalaryCodeAddComponent},
   ]},
   {path:'mainemp',component:MainScreenEmpComponent},
 

@@ -32,6 +32,9 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { AddDepartmentComponent } from './components/add-department/add-department.component';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { ListDepartmentComponent } from './components/list-department/list-department.component';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { SalaryCodeAddComponent } from './components/salary-code-add/salary-code-add.component';
+import { SalaryCodeListComponent } from './components/salary-code-list/salary-code-list.component';
 registerLocaleData(en);
 
 @NgModule({
@@ -44,7 +47,9 @@ registerLocaleData(en);
     MainScreenEmpComponent,
     ListEmployeeComponent,
     AddDepartmentComponent,
-    ListDepartmentComponent
+    ListDepartmentComponent,
+    SalaryCodeAddComponent,
+    SalaryCodeListComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +70,8 @@ registerLocaleData(en);
     NzInputModule,
     NzTableModule,
     NzCardModule,
-    NzMessageModule
+    NzMessageModule,
+    NzSelectModule
     
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
