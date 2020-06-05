@@ -15,6 +15,7 @@ export class AddEmployeeComponent implements OnInit {
 
   departments=[];
   jobs=[];
+  leaveCodes=[];
   validateForm!: FormGroup;
   id
 
@@ -31,6 +32,7 @@ export class AddEmployeeComponent implements OnInit {
     this.validation();
     this.getDepartments();
     this.getJobs();
+    this.getLeaveCode();
     this.getById();
   }
 
@@ -44,7 +46,8 @@ export class AddEmployeeComponent implements OnInit {
       resume: [null, [Validators.required]],
       allowances: [null, [Validators.required]],
       department: [null, [Validators.required]],
-      jobs: [null,[Validators.required]]
+      jobs: [null,[Validators.required]],
+      leavecode: [null,[Validators.required]]
 
     });
   }
@@ -74,11 +77,12 @@ export class AddEmployeeComponent implements OnInit {
     this.addEmployee.resume="";
     this.addEmployee.allowances=null;
     this.addEmployee.department="";
+    this.addEmployee.job="";
+    this.addEmployee.leavecode=""
   }
 
   getDepartments(){
     this.service.getDepartments().subscribe(d=>{
-      console.log(d);
       this.departments=d;
     })
   }
@@ -86,6 +90,12 @@ export class AddEmployeeComponent implements OnInit {
   getJobs(){
     this.service.getJob().subscribe(d=>{
        this.jobs=d;
+    })
+  }
+
+  getLeaveCode(){
+    this.service.getLeaveCode().subscribe(d=>{
+       this.leaveCodes=d;
     })
   }
 

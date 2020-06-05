@@ -19,17 +19,17 @@ export class MainServiceService {
   private getDepartmentURL = this.baseurl+'department';
   private deleteDepartmentURL=this.baseurl+'department/';
   private getDepartmentByIdURL = this.baseurl+'department/';
-
   private getSalaryCodesURL= this.baseurl+'salary-code'; 
   private postSalaryCodeURL= this.baseurl+'salary-code'
-
   private postAllowancesURL= this.baseurl+'allowances'
-
   private postJobURL = this.baseurl+'job';
   private getJobURL = this.baseurl+'job';
   private deleteJobURL = this.baseurl+'job/';
   private getJobByIdURL = this.baseurl+'job/';
-
+  private postLeaveCodeURL = this.baseurl+'leave-Code';
+  private getLeaveCodeURL = this.baseurl+'leave-Code';
+  private deleteLeaveCodeURL = this.baseurl+'leave-Code/';
+  private getLeaveCodeByIdURL = this.baseurl+'leave-Code/';
 
   public getLoginCriedential():Observable<any>{
     return this.http.get(this.getLoginCriedentialsURL);
@@ -79,18 +79,28 @@ export class MainServiceService {
   public getJobById(id):Observable<any>{
     return this.http.get(this.getJobByIdURL+id);
   }
-
   public getSalaryCodes():Observable<any>{
     return this.http.get(this.getSalaryCodesURL);
   }
-
   public postSalaryCode(obj):Observable<any>{
     return this.http.post(this.postSalaryCodeURL,obj);
   }
-
   public postAllowances(obj):Observable<any>{
     return this.http.post(this.postAllowancesURL,obj);
   }
-  
-
+  public postLeaveCode(obj):Observable<any>{
+    return this.http.post(this.postLeaveCodeURL,obj);
+  }
+  public getLeaveCode():Observable<any>{
+    return this.http.get(this.getLeaveCodeURL);
+  }
+  public deleteLeaveCode(id):Observable<any>{
+    return this.http.delete(this.deleteLeaveCodeURL+id);
+  }
+  public updateLeaveCode(id,obj):Observable<any>{
+    return this.http.put(this.deleteLeaveCodeURL+id,obj);
+  }
+  public getLeaveCodeById(id):Observable<any>{
+    return this.http.get(this.getLeaveCodeByIdURL+id);
+  }
 }

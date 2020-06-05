@@ -6,7 +6,7 @@
         <nz-form-item>
           <nz-form-control nzErrorTip="Please input your Job Code!">
             <nz-input-group nzPrefixIcon="">
-              <input formControlName="jobcode" nz-input type="text" [(ngModel)]= "addjob.jobcode" placeholder="Job Code" />
+              <input formControlName="jobcode" nz-input type="text"  [(ngModel)]= "addjob.jobcode" placeholder="Job Code" />
             </nz-input-group>
           </nz-form-control>
         </nz-form-item>
@@ -56,10 +56,6 @@
       </div>
     </div>
   
-      
-  
-    
-      
     <nz-form-item>
       <nz-form-control>
         <button nz-button nzType="primary" (click)="postJob()" [disabled]="!validateForm.valid" style="width: 70%; margin-left: 15%;">Submit</button>
