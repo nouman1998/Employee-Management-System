@@ -14,6 +14,8 @@ import { SalaryCodeListComponent } from './components/salary-code-list/salary-co
 
 import { AddJobComponent } from './components/add-job/add-job.component';
 import { ListJobComponent } from './components/list-job/list-job.component';
+import { AddLeaveCodeComponent } from './components/add-leave-code/add-leave-code.component';
+import { ListLeaveCodeComponent } from './components/list-leave-code/list-leave-code.component';
 
 
 
@@ -27,15 +29,16 @@ const routes: Routes = [
     {path:'add-dept',component:AddDepartmentComponent},
     {path:'list-dept',component:ListDepartmentComponent},
     {path:'add-dept/:id',component:AddDepartmentComponent},
-
     {path:'salary-add',component:SalaryCodeAddComponent},
     {path:'salary-list',component:SalaryCodeListComponent},
     {path:'salary-add/:id',component:SalaryCodeAddComponent},
-
     {path: 'add-user/:id', component: AddEmployeeComponent},
     {path: 'add-job', component: AddJobComponent},
     {path:'list-job', component: ListJobComponent},
-    {path:'add-job/:id',component:AddJobComponent}
+    {path:'add-job/:id',component:AddJobComponent},
+    {path:'add-leaveCode',component:AddLeaveCodeComponent},
+    {path:'list-leaveCode',component:ListLeaveCodeComponent},
+    {path:'add-leaveCode/:id',component:AddLeaveCodeComponent}
 
   ]},
   {path:'mainemp',component:MainScreenEmpComponent},

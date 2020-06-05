@@ -1,3 +1,4 @@
+<h3>List Of Employees</h3>
 <nz-table #basicTable [nzData]="listOfData">
     <thead>
       <tr>
@@ -11,6 +12,7 @@
         <th>Allowances</th>
         <th>Department</th>
         <th>Job Code</th>
+        <th>Leave Code</th>
         <th>Action</th>
 
       </tr>
@@ -27,6 +29,7 @@
         <td>{{ data.allowances}}</td>
         <td>{{ data.department}}</td>
         <td>{{ data.job}}</td>
+        <td>{{data.leavecode}}</td>
         <td>
           <span (click)="editEmployee(data.id)">  <a>Edit</a></span>
           &nbsp; | &nbsp; 

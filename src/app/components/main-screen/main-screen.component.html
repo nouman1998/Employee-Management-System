@@ -5,14 +5,14 @@
         <li nz-submenu nzTitle="Employee" nzIcon="user">
             <ul>
              <span (click)="navigateToAddComponent()" > <li nz-menu-item>Add Employee</li></span>
-              <span (click)="navigateToListComponent()"> <li nz-menu-item > List Employee</li></span>
+              <span (click)="navigateToListComponent()"> <li nz-menu-item >List Employee</li></span>
               <!-- <li nz-menu-item></li> -->
             </ul>
           </li>
           <li nz-submenu nzTitle="Department" nzIcon="border-outer">
             <ul>
              <span (click)="navigateToAddDepartment()" > <li nz-menu-item>Add Department</li></span>
-              <span (click)="navigateToListDepartment()"> <li nz-menu-item > List Department</li></span>
+              <span (click)="navigateToListDepartment()"> <li nz-menu-item >List Department</li></span>
               <!-- <li nz-menu-item></li> -->
             </ul>
           </li>
@@ -20,19 +20,28 @@
           <li nz-submenu nzTitle="Salary Code" nzIcon="border-outer">
             <ul>
              <span (click)="navigateToAddSalary()" > <li nz-menu-item>Add Salary</li></span>
-              <span (click)="navigateToListSalary()"> <li nz-menu-item > List Salary</li></span>
+              <span (click)="navigateToListSalary()"> <li nz-menu-item >List Salary</li></span>
             </ul>
           </li>
 
           <li nz-submenu nzTitle="Job" nzIcon="border-outer">
             <ul>
              <span (click)=" navigateToAddJob()" > <li nz-menu-item>Add Job</li></span>
-              <span (click)="navigateToListJob()"> <li nz-menu-item > List Job</li></span>
+              <span (click)="navigateToListJob()"> <li nz-menu-item >List Job</li></span>
 
               <!-- <li nz-menu-item></li> -->
             </ul>
           </li>
-        <li nz-menu-item>
+
+          <li nz-submenu nzTitle="Leave Code" nzIcon="border-outer">
+            <ul>
+             <span (click)=" navigateToAddLeaveCode()" > <li nz-menu-item>Add Leave Code</li></span>
+             <span (click)="navigateToListLeaveCode()"> <li nz-menu-item >List Leave Code</li></span>
+
+              <!-- <li nz-menu-item></li> -->
+            </ul>
+          </li>
+        <!-- <li nz-menu-item>
           <i nz-icon nzType="upload"></i>
           <span>nav 3</span>
         </li>
@@ -55,7 +64,7 @@
         <li nz-menu-item>
           <i nz-icon nzType="shop"></i>
           <span>nav 8</span>
-        </li>
+        </li> -->
       </ul>
     </nz-sider>
     <nz-layout class="right-layout">

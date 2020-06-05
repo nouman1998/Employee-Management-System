@@ -8,4 +8,5 @@ export class employee{
     allowances: number
     department:string
     job:string
+    leavecode:string
 }
