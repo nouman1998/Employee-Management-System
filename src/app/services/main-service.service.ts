@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -8,28 +10,28 @@ export class MainServiceService {
 
   constructor(private http:HttpClient) { }
 
-  private baseurl:String="http://localhost:3000/";
+  // private baseurl:String="http://localhost:8080/api/";
 
-  private getLoginCriedentialsURL =this.baseurl+"login";
-  private getEmpListsURL= this.baseurl+'employees'
-  private postEmpURL= this.baseurl+'employees'
-  private deleteEmpURL = this.baseurl+'employees/'
-  private getEmpByIdURL = this.baseurl+'employees/'
-  private postDepartmentURL= this.baseurl+'department';
-  private getDepartmentURL = this.baseurl+'department';
-  private deleteDepartmentURL=this.baseurl+'department/';
-  private getDepartmentByIdURL = this.baseurl+'department/';
-  private getSalaryCodesURL= this.baseurl+'salary-code'; 
-  private postSalaryCodeURL= this.baseurl+'salary-code'
-  private postAllowancesURL= this.baseurl+'allowances'
-  private postJobURL = this.baseurl+'job';
-  private getJobURL = this.baseurl+'job';
-  private deleteJobURL = this.baseurl+'job/';
-  private getJobByIdURL = this.baseurl+'job/';
-  private postLeaveCodeURL = this.baseurl+'leave-Code';
-  private getLeaveCodeURL = this.baseurl+'leave-Code';
-  private deleteLeaveCodeURL = this.baseurl+'leave-Code/';
-  private getLeaveCodeByIdURL = this.baseurl+'leave-Code/';
+  private getLoginCriedentialsURL = environment.baseUrl+"login";
+  private getEmpListsURL= environment.baseUrl+'employees/'
+  private postEmpURL= environment.baseUrl+'employees/post'
+  private deleteEmpURL = environment.baseUrl+'employees/'
+  private getEmpByIdURL = environment.baseUrl+'employees/'
+  private postDepartmentURL= environment.baseUrl+'department/post';
+  private getDepartmentURL = environment.baseUrl+'department/';
+  private deleteDepartmentURL = environment.baseUrl+'department/';
+  private getDepartmentByIdURL = environment.baseUrl+'department/';
+  private getSalaryCodesURL = environment.baseUrl+'salarycode/'; 
+  private postSalaryCodeURL = environment.baseUrl+'salarycode/post'
+  private postAllowancesURL = environment.baseUrl+'allowances'
+  private postJobURL = environment.baseUrl+'job/post';
+  private getJobURL = environment.baseUrl+'job/';
+  private deleteJobURL = environment.baseUrl+'job/';
+  private getJobByIdURL = environment.baseUrl+'job/';
+  private postLeaveCodeURL = environment.baseUrl+'leavecode/post';
+  private getLeaveCodeURL = environment.baseUrl+'leavecode/';
+  private deleteLeaveCodeURL = environment.baseUrl+'leavecode/';
+  private getLeaveCodeByIdURL = environment.baseUrl+'leavecode/';
 
   public getLoginCriedential():Observable<any>{
     return this.http.get(this.getLoginCriedentialsURL);

@@ -19,7 +19,7 @@ export class ListEmployeeComponent implements OnInit {
     this.getEmpList();
   }
   getEmpList(){
-    this.service.getEmpList().subscribe(d=>{this.listOfData=d});
+    this.service.getEmpList().subscribe(d=>{this.listOfData=d.result});
   }
   editEmployee(id){
     this.router.navigate([`main/add-user/${id}`]);

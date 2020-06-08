@@ -1,7 +1,7 @@
 export class job{
-    jobcode: string
-    jobtitle: string
-    jobrole: string
-    jobduties: string
-    jobdescription: string
+    jobCode: string
+    jobTitle: string
+    jobRole: string
+    jobDuties: string
+    jobDescription: string
 }

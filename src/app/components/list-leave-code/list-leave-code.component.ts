@@ -30,7 +30,8 @@ export class ListLeaveCodeComponent implements OnInit {
 
  getLeaveCode(){
    this.service.getLeaveCode().subscribe(d=>{
-     this.listOfData=d;
+     console.log("Data",d);
+     this.listOfData=d.result;
    })
  }
 

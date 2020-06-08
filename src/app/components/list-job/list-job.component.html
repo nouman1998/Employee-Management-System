@@ -15,11 +15,11 @@
     <tbody>
       <tr *ngFor="let data of basicTable.data">
         <td>{{ data.id }}</td>
-        <td>{{ data.jobcode }}</td>
-        <td>{{ data.jobtitle }}</td>
-        <td>{{ data.jobrole }}</td>
-        <td>{{ data.jobduties}}</td>
-        <td>{{ data.jobdescription }}</td>
+        <td>{{ data.jobCode }}</td>
+        <td>{{ data.jobTitle }}</td>
+        <td>{{ data.jobRole }}</td>
+        <td>{{ data.jobDuties}}</td>
+        <td>{{ data.jobDescription }}</td>
         <td>
           <span (click)="editJob(data.id)">  <a>Edit</a></span>
           &nbsp; | &nbsp; 

@@ -62,20 +62,20 @@ export class AddJobComponent implements OnInit {
   }
   getJobById(){
     this.service.getJobById(this.id).subscribe(d=>{
-      this.addjob.jobcode=d.jobcode;
-      this.addjob.jobtitle=d.jobtitle;
-      this.addjob.jobrole = d.jobrole;
-      this.addjob.jobduties = d.jobduties;
-      this.addjob.jobdescription = d.jobdescription;
+      this.addjob.jobCode=d.result.jobCode;
+      this.addjob.jobTitle=d.result.jobTitle;
+      this.addjob.jobRole = d.result.jobRole;
+      this.addjob.jobDuties = d.result.jobDuties;
+      this.addjob.jobDescription = d.result.jobDescription;
     })
   }
 
   erasingFields(){
-    this.addjob.jobcode="";
-    this.addjob.jobtitle="";
-    this.addjob.jobrole="";
-    this.addjob.jobduties="";
-    this.addjob.jobdescription="";
+    this.addjob.jobCode="";
+    this.addjob.jobTitle="";
+    this.addjob.jobRole="";
+    this.addjob.jobDuties="";
+    this.addjob.jobDescription="";
   }
 
 
