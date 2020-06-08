@@ -67,8 +67,8 @@ export class AddLeaveCodeComponent implements OnInit {
   getLeaveCodeById(){
    this.service.getLeaveCodeById(this.id).subscribe(d=>{
      console.log("LeaveCode:",d);
-     this.addLeave.leaveCode=d.leaveCode;
-     this.addLeave.maxLeaves=d.maxLeaves;
+     this.addLeave.leaveCode=d.result.leaveCode;
+     this.addLeave.maxLeaves=d.result.maxLeaves;
    })
   }
 

@@ -20,7 +20,7 @@ export class ListJobComponent implements OnInit {
 
   getJob(){
     this.service.getJob().subscribe(d=>{
-      this.listOfData=d;
+      this.listOfData=d.result;
     })
   }
 
