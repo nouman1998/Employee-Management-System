@@ -12,10 +12,18 @@ export class SalaryCodeListComponent implements OnInit {
   constructor(private service:MainServiceService,private router:Router) { }
 data
   ngOnInit(): void {
-    this.service.getSalaryCodes().subscribe(d=>this.data=d);
+
+
+    this.service.getSalaryCodes().subscribe(d=>this.data=d.result);
   }
+
+  
+  
   editSalaryCode(id){
-    this.router.navigate([`salary-add/${id}`]);
+    this.router.navigate([`main/salary-add/${id}`]);  
   }
-  deleteSalaryCode(id){}
+  deleteSalaryCode(id){
+    this.service.deleteSalaryCode(id).subscribe();
+      this.data=this.data.filter(d=>d.id!=id);
+  }
 }
