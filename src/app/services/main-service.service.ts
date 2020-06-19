@@ -18,7 +18,7 @@ export class MainServiceService {
   private postEmpURL= this.baseurl+'employees'
   private deleteEmpURL = this.baseurl+'employees/'
   private getEmpByIdURL = this.baseurl+'employees/'
-  private postDepartmentURL= this.baseurl+'department/';
+  private postDepartmentURL= this.baseurl+'department/post';
   private getDepartmentURL = this.baseurl+'department/';
   private deleteDepartmentURL=this.baseurl+'department/';
   private getDepartmentByIdURL = this.baseurl+'department/';
@@ -28,7 +28,7 @@ export class MainServiceService {
 
   private postAllowancesURL= this.baseurl+'allowances'
 
-  private postJobURL = this.baseurl+'job';
+  private postJobURL = this.baseurl+'job/post';
   private getJobURL = this.baseurl+'job';
   private deleteJobURL = this.baseurl+'job/';
   private getJobByIdURL = this.baseurl+'job/';
@@ -37,22 +37,22 @@ export class MainServiceService {
   private getSalaryCodeByIdURL = this.baseurl+'salary-code/';
 
 
-  private getLoginCriedentialsURL = environment.baseUrl+"login";
-  private getEmpListsURL= environment.baseUrl+'employees/'
-  private postEmpURL= environment.baseUrl+'employees/post'
-  private deleteEmpURL = environment.baseUrl+'employees/'
-  private getEmpByIdURL = environment.baseUrl+'employees/'
-  private postDepartmentURL= environment.baseUrl+'department/post';
-  private getDepartmentURL = environment.baseUrl+'department/';
-  private deleteDepartmentURL = environment.baseUrl+'department/';
-  private getDepartmentByIdURL = environment.baseUrl+'department/';
-  private getSalaryCodesURL = environment.baseUrl+'salarycode/'; 
-  private postSalaryCodeURL = environment.baseUrl+'salarycode/post'
-  private postAllowancesURL = environment.baseUrl+'allowances'
-  private postJobURL = environment.baseUrl+'job/post';
-  private getJobURL = environment.baseUrl+'job/';
-  private deleteJobURL = environment.baseUrl+'job/';
-  private getJobByIdURL = environment.baseUrl+'job/';
+  // private getLoginCriedentialsURL = environment.baseUrl+"login";
+  // private getEmpListsURL= environment.baseUrl+'employees/'
+  // private postEmpURL= environment.baseUrl+'employees/post'
+  // private deleteEmpURL = environment.baseUrl+'employees/'
+  // private getEmpByIdURL = environment.baseUrl+'employees/'
+  // private postDepartmentURL= environment.baseUrl+'department/post';
+  // private getDepartmentURL = environment.baseUrl+'department/';
+  // private deleteDepartmentURL = environment.baseUrl+'department/';
+  // private getDepartmentByIdURL = environment.baseUrl+'department/';
+  // private getSalaryCodesURL = environment.baseUrl+'salarycode/'; 
+  // private postSalaryCodeURL = environment.baseUrl+'salarycode/post'
+  // private postAllowancesURL = environment.baseUrl+'allowances'
+  // private postJobURL = environment.baseUrl+'job/post';
+  // private getJobURL = environment.baseUrl+'job/';
+  // private deleteJobURL = environment.baseUrl+'job/';
+  // private getJobByIdURL = environment.baseUrl+'job/';
   private postLeaveCodeURL = environment.baseUrl+'leavecode/post';
   private getLeaveCodeURL = environment.baseUrl+'leavecode/';
   private deleteLeaveCodeURL = environment.baseUrl+'leavecode/';
@@ -121,9 +121,9 @@ export class MainServiceService {
     return this.http.put(this.getSalaryCodesURL+id,obj);
   }
 
-  public postAllowances(obj):Observable<any>{
-    return this.http.post(this.postAllowancesURL,obj);
-  }
+  // public postAllowances(obj):Observable<any>{
+  //   return this.http.post(this.postAllowancesURL,obj);
+  // }
   public deleteSalaryCode(id):Observable<any>{
     return this.http.delete(this.deleteSalaryCodeURL+id);
   }
