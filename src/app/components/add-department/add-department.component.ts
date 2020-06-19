@@ -39,6 +39,9 @@ id
   }
   getDepartments() {
     this.service.getDepartmentByID(this.id).subscribe(d=>{
+
+      console.log("dataa",d.result);
+
       this.depart.name=d.result.name;
       this.depart.description=d.result.description;
     })

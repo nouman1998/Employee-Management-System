@@ -6,7 +6,7 @@
         <nz-form-item>
           <nz-form-control nzErrorTip="Please input your Job Code!">
             <nz-input-group nzPrefixIcon="">
-              <input formControlName="jobcode" nz-input type="text" [(ngModel)]= "addjob.jobcode" placeholder="Job Code" />
+              <input formControlName="jobcode" nz-input type="text"  [(ngModel)]= "addjob.jobCode" placeholder="Job Code" />
             </nz-input-group>
           </nz-form-control>
         </nz-form-item>
@@ -15,7 +15,7 @@
         <nz-form-item>
           <nz-form-control nzErrorTip="Please input your Job Title !">
             <nz-input-group nzPrefixIcon="">
-              <input formControlName="jobtitle" nz-input type="text" [(ngModel)]= "addjob.jobtitle" placeholder="Job Title" />
+              <input formControlName="jobtitle" nz-input type="text" [(ngModel)]= "addjob.jobTitle" placeholder="Job Title" />
             </nz-input-group>
           </nz-form-control>
         </nz-form-item>
@@ -27,7 +27,7 @@
         <nz-form-item>
           <nz-form-control nzErrorTip="Please input your Job Role!">
             <nz-input-group nzPrefixIcon="">
-              <input formControlName="jobrole" nz-input type="text" [(ngModel)]= "addjob.jobrole" placeholder="Job Role" />
+              <input formControlName="jobrole" nz-input type="text" [(ngModel)]= "addjob.jobRole" placeholder="Job Role" />
             </nz-input-group>
           </nz-form-control>
         </nz-form-item>
@@ -37,7 +37,7 @@
         <nz-form-item>
           <nz-form-control nzErrorTip="Please input your Job Duties!">
             <nz-input-group nzPrefixIcon="">
-              <input formControlName="jobduties" nz-input type="text" [(ngModel)]= "addjob.jobduties" placeholder="Job Duties" />
+              <input formControlName="jobduties" nz-input type="text" [(ngModel)]= "addjob.jobDuties" placeholder="Job Duties" />
             </nz-input-group>
           </nz-form-control>
         </nz-form-item>
@@ -49,17 +49,13 @@
         <nz-form-item>
           <nz-form-control nzErrorTip="Please input your Job Description!">
             <nz-input-group nzPrefixIcon="">
-              <input formControlName="jobdescription" nz-input type="text" [(ngModel)]= "addjob.jobdescription" placeholder="Job Description" />
+              <input formControlName="jobdescription" nz-input type="text" [(ngModel)]= "addjob.jobDescription" placeholder="Job Description" />
             </nz-input-group>
           </nz-form-control>
         </nz-form-item>
       </div>
     </div>
   
-      
-  
-    
-      
     <nz-form-item>
       <nz-form-control>
         <button nz-button nzType="primary" (click)="postJob()" [disabled]="!validateForm.valid" style="width: 70%; margin-left: 15%;">Submit</button>

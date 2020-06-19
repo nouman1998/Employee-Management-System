@@ -1,0 +1,30 @@
+<nz-card nzTitle="Add Leave Code" style="padding: 10px; text-align: left;">
+    <br>
+    <form nz-form [nzLayout]="'vertical'" [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <div nz-row>
+      <div nz-col nzSpan="10">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your Leave Code!">
+            <nz-input-group nzPrefixIcon="">
+              <input formControlName="leavecode" nz-input type="text" [(ngModel)]= "addLeave.leaveCode" placeholder="Leave Code" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="10" nzOffset="4">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your Maximum Leaves !">
+            <nz-input-group nzPrefixIcon="">
+              <input formControlName="maxleaves" nz-input type="text" [(ngModel)]= "addLeave.maxLeaves" placeholder="Maximum Leaves" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </div>
+    <nz-form-item>
+        <nz-form-control>
+          <button nz-button nzType="primary" (click)="postLeaveCode()" [disabled]="!validateForm.valid" style="width: 70%; margin-left: 15%;">Submit</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+    </nz-card>
