@@ -14,22 +14,22 @@ export class MainServiceService {
   private baseurl:String="http://localhost:8080/api/";
 
   private getLoginCriedentialsURL =this.baseurl+"login";
-  private getEmpListsURL= this.baseurl+'employees'
-  private postEmpURL= this.baseurl+'employees'
-  private deleteEmpURL = this.baseurl+'employees/'
-  private getEmpByIdURL = this.baseurl+'employees/'
+  private getEmpListsURL= this.baseurl+'employee/'
+  private postEmpURL= this.baseurl+'employee/post'
+  private deleteEmpURL = this.baseurl+'employee/'
+  private getEmpByIdURL = this.baseurl+'employee/'
   private postDepartmentURL= this.baseurl+'department/post';
   private getDepartmentURL = this.baseurl+'department/';
   private deleteDepartmentURL=this.baseurl+'department/';
   private getDepartmentByIdURL = this.baseurl+'department/';
 
   private getSalaryCodesURL= this.baseurl+'salary-code/'; 
-  private postSalaryCodeURL= this.baseurl+'salary-code/'
+  private postSalaryCodeURL= this.baseurl+'salary-code/post'
 
   private postAllowancesURL= this.baseurl+'allowances'
 
   private postJobURL = this.baseurl+'job/post';
-  private getJobURL = this.baseurl+'job';
+  private getJobURL = this.baseurl+'job/';
   private deleteJobURL = this.baseurl+'job/';
   private getJobByIdURL = this.baseurl+'job/';
   private deleteSalaryCodeURL = this.baseurl+'salary-code/';

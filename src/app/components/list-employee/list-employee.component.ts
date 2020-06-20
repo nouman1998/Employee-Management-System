@@ -31,6 +31,6 @@ export class ListEmployeeComponent implements OnInit {
     });
     this.listOfData=this.listOfData.filter(d=>d.id!=id);
   }
-    
+  ViewResume(){}
 
 }
