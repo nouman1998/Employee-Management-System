@@ -3,10 +3,12 @@ export class employee{
     mobileNumber: number
     email: string
     address:string
-    pay: number
-    resume: string
+    grossAmount: number
+    resume: File
     allowances: number
     department:string
     job:string
     leavecode:string
+    pay
+    salaryCode
 }

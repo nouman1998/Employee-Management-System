@@ -7,9 +7,9 @@
         <th>Mobile</th>
         <th>Email</th>
         <th>Address</th>
-        <th>Pay</th>
+       
         <th>Resume</th>
-        <th>Allowances</th>
+    
         <th>Department</th>
         <th>Job Code</th>
         <th>Leave Code</th>
@@ -24,12 +24,12 @@
         <td>{{ data.mobileNumber }}</td>
         <td>{{ data.email }}</td>
         <td>{{ data.address}}</td>
-        <td>{{ data.pay }}</td>
-        <td>{{ data.resume }}</td>
-        <td>{{ data.allowances}}</td>
-        <td>{{ data.department}}</td>
-        <td>{{ data.job}}</td>
-        <td>{{data.leavecode}}</td>
+       
+        <td> <a href="" (click)='ViewResume()' >View</a></td>
+       
+        <td>{{ data.depart.name}}</td>
+        <td>{{ data.job.jobCode}}</td>
+        <td>{{data.leaveCode.leaveCode}}</td>
         <td>
           <span (click)="editEmployee(data.id)">  <a>Edit</a></span>
           &nbsp; | &nbsp; 

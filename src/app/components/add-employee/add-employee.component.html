@@ -59,7 +59,7 @@
       <nz-form-item>
         <nz-form-control nzErrorTip="Please input your Resume!">
           <nz-input-group nzPrefixIcon="">
-            <input formControlName="resume" nz-input type="file" [(ngModel)]= "addEmployee.resume" placeholder="Resume" />
+            <input formControlName="resume" nz-input type="file"  placeholder="Resume"   (change)="handleCategoryBanner($event.target.files)" />
           </nz-input-group>
         </nz-form-control>
       </nz-form-item>
@@ -67,13 +67,14 @@
   </div>
 
   <div nz-row>
-    <div nz-col nzSpan="10">
+    <div nz-col nzSpan="10" nzOffset="4" >
       <nz-form-item>
-        <nz-form-control nzErrorTip="Please input your Allowances!">
-          <nz-input-group nzPrefixIcon="">
-            <input formControlName="allowances" nz-input type="text" [(ngModel)]= "addEmployee.allowances" placeholder="Allowances" />
-          </nz-input-group>
-        </nz-form-control>
+          <!-- <nz-form-label nzFor="email">Departments</nz-form-label>
+          <br> -->
+          <nz-select name="salaryCode" formControlName="salaryCode" nzSize="large" [(ngModel)]="addEmployee.salaryCode" class="phone-select"
+            nzPlaceHolder="Select a Salary Code" required>
+            <nz-option *ngFor="let item of salaryCode" nzLabel={{item.code}} nzValue="{{item.id}}"></nz-option>
+          </nz-select>
       </nz-form-item>
     </div>
     <div nz-col nzSpan="10" nzOffset="4">
@@ -94,7 +95,7 @@
           <br> -->
           <nz-select name="jobs" formControlName="jobs" nzSize="large" [(ngModel)]="addEmployee.job" class="phone-select"
             nzPlaceHolder="Select a Job" required>
-            <nz-option *ngFor="let item of jobs" nzLabel={{item.jobcode}} nzValue="{{item.jobcode}}"></nz-option>
+            <nz-option *ngFor="let item of jobs" nzLabel={{item.jobCode}} nzValue="{{item.id}}"></nz-option>
           </nz-select>
       </nz-form-item>
     </div>
@@ -104,14 +105,14 @@
           <br> -->
           <nz-select name="leavecode" formControlName="leavecode" nzSize="large" [(ngModel)]="addEmployee.leavecode" class="phone-select"
             nzPlaceHolder="Select a Leave Code" required>
-            <nz-option *ngFor="let item of leaveCodes" nzLabel={{item.leaveCode}} nzValue="{{item.leaveCode}}"></nz-option>
+            <nz-option *ngFor="let item of leaveCodes" nzLabel={{item.leaveCode}} nzValue="{{item.leaveCode.id}}"></nz-option>
           </nz-select>
       </nz-form-item>
     </div>
   </div>
   <nz-form-item>
     <nz-form-control>
-      <button nz-button nzType="primary" (click)="postEmployee()" [disabled]="!validateForm.valid" style="width: 70%; margin-left: 15%;">Submit</button>
+      <button nz-button nzType="primary" (click)="postEmployee()"  style="width: 70%; margin-left: 15%;">Submit</button>
     </nz-form-control>
   </nz-form-item>
 </form>
