@@ -25,7 +25,7 @@
         <td>{{ data.email }}</td>
         <td>{{ data.address}}</td>
        
-        <td> <a href="" (click)='ViewResume()' >View</a></td>
+        <td> <a  (click)='ViewResume(data)' style="color:blueviolet">View</a></td>
        
         <td>{{ data.depart.name}}</td>
         <td>{{ data.job.jobCode}}</td>
@@ -37,4 +37,6 @@
           </td>
       </tr>
     </tbody>
+    
+
   </nz-table>

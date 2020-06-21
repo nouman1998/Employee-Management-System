@@ -16,6 +16,7 @@ import { AddJobComponent } from './components/add-job/add-job.component';
 import { ListJobComponent } from './components/list-job/list-job.component';
 import { AddLeaveCodeComponent } from './components/add-leave-code/add-leave-code.component';
 import { ListLeaveCodeComponent } from './components/list-leave-code/list-leave-code.component';
+import { ResumeViewComponent } from './components/resume-view/resume-view.component';
 
 
 
@@ -38,7 +39,8 @@ const routes: Routes = [
     {path:'add-job/:id',component:AddJobComponent},
     {path:'add-leaveCode',component:AddLeaveCodeComponent},
     {path:'list-leaveCode',component:ListLeaveCodeComponent},
-    {path:'add-leaveCode/:id',component:AddLeaveCodeComponent}
+    {path:'add-leaveCode/:id',component:AddLeaveCodeComponent},
+    {path:'resume-view/:id',component:ResumeViewComponent}
 
   ]},
   {path:'mainemp',component:MainScreenEmpComponent},

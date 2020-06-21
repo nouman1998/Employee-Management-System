@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -153,5 +153,16 @@ export class MainServiceService {
   public getLeaveCodeById(id):Observable<any>{
     return this.http.get(this.getLeaveCodeByIdURL+id);
   }
+
+  public getImage(value):Observable<any>{
+    return this.http.get(value,
+    {responseType:'blob'});
+  }
+
+  changeMessage(message: string) {
+    this.messageSource.next(message)
+  }
+  private messageSource = new Subject<any>();
+  currentMessage = this.messageSource.asObservable();
 
 }

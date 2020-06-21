@@ -38,7 +38,10 @@ import { AddJobComponent } from './components/add-job/add-job.component';
 import { ListJobComponent } from './components/list-job/list-job.component';
 import { AddLeaveCodeComponent } from './components/add-leave-code/add-leave-code.component';
 import { ListLeaveCodeComponent } from './components/list-leave-code/list-leave-code.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { ResumeViewComponent } from './components/resume-view/resume-view.component';
 
 
 registerLocaleData(en);
@@ -59,11 +62,13 @@ registerLocaleData(en);
     AddJobComponent,
     ListJobComponent,
     AddLeaveCodeComponent,
-    ListLeaveCodeComponent
+    ListLeaveCodeComponent,
+    ResumeViewComponent
 
   ],
   imports: [
     BrowserModule,
+    PdfViewerModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
@@ -83,7 +88,8 @@ registerLocaleData(en);
     NzCardModule,
     NzMessageModule,
     NzDropDownModule,
-    NzSelectModule
+    NzSelectModule,
+    NzModalModule
     
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

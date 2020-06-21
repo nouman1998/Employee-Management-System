@@ -31,6 +31,38 @@ export class ListEmployeeComponent implements OnInit {
     });
     this.listOfData=this.listOfData.filter(d=>d.id!=id);
   }
-  ViewResume(){}
+  ViewResume(data){
+    
+    
+   this.router.navigate(['main/resume-view/'+data.id])
+    
+  }
+
+
+
+
+
+
+
+  // isVisible = false;
+
+
+
+  // showModal(): void {
+  //   this.isVisible = true;
+  // }
+
+  // handleOk(): void {
+  //   console.log('Button ok clicked!');
+  //   this.isVisible = false;
+  // }
+
+
+
+  // handleCancel(): void {
+  //   console.log('Button cancel clicked!');
+  //   this.isVisible = false;
+  // }
+
 
 }
