@@ -13,7 +13,7 @@ export class MainServiceService {
 
   private baseurl:String="http://localhost:8080/api/";
 
-  private getLoginCriedentialsURL =this.baseurl+"login";
+  private getLoginCriedentialsURL ="http://localhost:3000/"+"login";
   private getEmpListsURL= this.baseurl+'employee/'
   private postEmpURL= this.baseurl+'employee/post'
   private deleteEmpURL = this.baseurl+'employee/'
@@ -22,12 +22,9 @@ export class MainServiceService {
   private getDepartmentURL = this.baseurl+'department/';
   private deleteDepartmentURL=this.baseurl+'department/';
   private getDepartmentByIdURL = this.baseurl+'department/';
-
   private getSalaryCodesURL= this.baseurl+'salary-code/'; 
   private postSalaryCodeURL= this.baseurl+'salary-code/post'
-
   private postAllowancesURL= this.baseurl+'allowances'
-
   private postJobURL = this.baseurl+'job/post';
   private getJobURL = this.baseurl+'job/';
   private deleteJobURL = this.baseurl+'job/';
@@ -35,7 +32,6 @@ export class MainServiceService {
   private deleteSalaryCodeURL = this.baseurl+'salary-code/';
   private deleteAllowancesURL= this.baseurl+'allowances/';
   private getSalaryCodeByIdURL = this.baseurl+'salary-code/';
-
 
   // private getLoginCriedentialsURL = environment.baseUrl+"login";
   // private getEmpListsURL= environment.baseUrl+'employees/'
@@ -57,6 +53,14 @@ export class MainServiceService {
   private getLeaveCodeURL = environment.baseUrl+'leavecode/';
   private deleteLeaveCodeURL = environment.baseUrl+'leavecode/';
   private getLeaveCodeByIdURL = environment.baseUrl+'leavecode/';
+  private getTotalEmployeeCountURL = this.baseurl+'dashboard/totalemp';
+  private getTotalDepartmentCountURL = this.baseurl+'dashboard/totaldept';
+  private getTotalSalaryCodeCountURL = this.baseurl+'dashboard/totalsalarycode';
+  private getTotalJobCodeCountURL = this.baseurl+'dashboard/totaljobcode';
+  private getTotalLeaveCodeCountURL = this.baseurl+'dashboard/totalleavecode';
+  private getTotalSumOfSalariesURL = this.baseurl+'dashboard/totalsalaries'
+
+
 
   public getLoginCriedential():Observable<any>{
     return this.http.get(this.getLoginCriedentialsURL);
@@ -113,7 +117,6 @@ export class MainServiceService {
     return this.http.post(this.postSalaryCodeURL,obj);
   }
 
-
   public getSalaryCodeById(id):Observable<any>{
     return this.http.get(this.getSalaryCodeByIdURL+id);
   }
@@ -130,10 +133,6 @@ export class MainServiceService {
   public deleteAllowances(id):Observable<any>{
     return this.http.delete(this.deleteEmpURL+id);
   }
-
-  
-  
-
 
   public postAllowances(obj):Observable<any>{
     return this.http.post(this.postAllowancesURL,obj);
@@ -164,5 +163,29 @@ export class MainServiceService {
   }
   private messageSource = new Subject<any>();
   currentMessage = this.messageSource.asObservable();
+
+  public getTotalEmployeeCount():Observable<any>{
+    return this.http.get(this.getTotalEmployeeCountURL);
+  }
+
+  public getTotalDepartmentCount():Observable<any>{
+    return this.http.get(this.getTotalDepartmentCountURL);
+  }
+
+  public getTotalSalaryCodeCount():Observable<any>{
+    return this.http.get(this.getTotalSalaryCodeCountURL);
+  }
+
+  public getTotalJobCodeCount():Observable<any>{
+    return this.http.get(this.getTotalJobCodeCountURL);
+  }
+
+  public getTotalLeaveCodeCount():Observable<any>{
+    return this.http.get(this.getTotalLeaveCodeCountURL);
+  }
+
+  public getTotalSumOfSalaries():Observable<any>{
+    return this.http.get(this.getTotalSumOfSalariesURL);
+  }
 
 }

@@ -1,1 +1,43 @@
-<p>main-dashboard works!</p>
+<nz-card style="width:100%;" nzTitle="Dashboards"  style="background-color: #fcfcfa;">
+    <div nz-row>
+        <div nz-col="7">
+            <nz-card style="width: 340px;" nzTitle="Total Employees" (click)="goToListEmployee()">
+                <b style="font-size: xx-large;">{{employeeCount}}</b>
+            </nz-card>
+        </div>
+        <div nz-col="7" nzOffset="1">
+            <nz-card style="width: 340px;" nzTitle="Total Departments" (click)="goToListDepartment()">
+                <b style="font-size: xx-large;">{{departmentCount}}</b>
+            </nz-card>
+        </div>
+        <div nz-col="7" nzOffset="1">
+            <nz-card style="width: 340px;" nzTitle="Total Salaries">
+                <b style="font-size: xx-large;">{{totalSumOfSalaries}}</b>
+
+            </nz-card>
+        </div>
+
+    </div>
+    <br>
+    <br>
+    <div nz-row>
+        <div nz-col="7">
+            <nz-card style="width: 340px;" nzTitle="Total Salary Codes" (click)="goToListSalaryCode()">
+                <b style="font-size: xx-large;">{{salaryCodeCount}}</b>
+            </nz-card>
+        </div>
+        <div nz-col="7" nzOffset="1">
+            <nz-card style="width: 340px;" nzTitle="Total Job Codes" (click)="goToListJobCode()">
+                <b style="font-size: xx-large;">{{jobCodeCount}}</b>
+            </nz-card>
+        </div>
+        <div nz-col="7" nzOffset="1">
+            <nz-card style="width: 340px;" nzTitle="Total Leave Codes" (click)="goToListLeaveCode()">
+                <b style="font-size: xx-large;">{{leaveCodeCount}}</b>
+            </nz-card>
+        </div>
+
+    </div>
+
+
+</nz-card>
