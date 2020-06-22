@@ -67,7 +67,7 @@
   </div>
 
   <div nz-row>
-    <div nz-col nzSpan="10" nzOffset="4" >
+    <div nz-col nzSpan="10"  >
       <nz-form-item>
           <!-- <nz-form-label nzFor="email">Departments</nz-form-label>
           <br> -->
@@ -105,7 +105,7 @@
           <br> -->
           <nz-select name="leavecode" formControlName="leavecode" nzSize="large" [(ngModel)]="addEmployee.leavecode" class="phone-select"
             nzPlaceHolder="Select a Leave Code" required>
-            <nz-option *ngFor="let item of leaveCodes" nzLabel={{item.leaveCode}} nzValue="{{item.leaveCode.id}}"></nz-option>
+            <nz-option *ngFor="let item of leaveCodes" nzLabel={{item.leaveCode}} nzValue="{{item.id}}"></nz-option>
           </nz-select>
       </nz-form-item>
     </div>
