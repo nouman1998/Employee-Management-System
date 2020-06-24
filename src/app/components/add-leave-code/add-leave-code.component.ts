@@ -56,7 +56,7 @@ export class AddLeaveCodeComponent implements OnInit {
   erasingFields(){
     this.addLeave.leaveCode="";
     this.addLeave.maxLeaves="";
-  }
+  } 
 
   getById(){
     this.id= this.activateRoute.snapshot.params['id'];
