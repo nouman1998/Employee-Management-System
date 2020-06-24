@@ -10,5 +10,5 @@ export class employee{
     job:string
     leavecode:string
     pay
-    salaryCode
+    salaryCode:string
 }

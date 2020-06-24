@@ -38,6 +38,9 @@ export class ListEmployeeComponent implements OnInit {
     
   }
 
+  navigateToPersonalDashboard(id){
+    this.router.navigate([`personal/${id}`]);
+  }
 
 
 
