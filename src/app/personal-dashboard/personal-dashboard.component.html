@@ -46,7 +46,7 @@
                </div>
                <div nz-row >
                 <div nz-col nzSpan="10"> <span style="font-size:medium; color: rgb(123, 123, 128);">  Father's Name</span></div>
-                <div nz-col nzSpan="14"> <span style="font-size:medium; color: rgb(18, 17, 22);"> To Add </span></div>
+                <div nz-col nzSpan="14"> <span style="font-size:medium; color: rgb(18, 17, 22);"> {{data.fname}} </span></div>
                 <hr >
                 
             </div>
@@ -54,7 +54,7 @@
 
             <div nz-row >
                 <div nz-col nzSpan="10"> <span style="font-size:medium; color: rgb(123, 123, 128);"> Date of Birth</span></div>
-                <div nz-col nzSpan="14"> <span style="font-size:medium; color: rgb(18, 17, 22);"> To Add </span></div>
+                <div nz-col nzSpan="14"> <span style="font-size:medium; color: rgb(18, 17, 22);">{{data.dob}} </span></div>
                 <hr >
                 
             </div>
@@ -127,7 +127,7 @@
             </div>
             <div nz-row >
                 <div nz-col nzSpan="10"> <span style="font-size:medium; color: rgb(123, 123, 128);"> Resume</span></div>
-                <div nz-col nzSpan="14"> <span style="font-size:medium; color: rgb(18, 17, 22);"> <a (click)="viewResume()">View</a></span></div>
+                <div nz-col nzSpan="14"> <span style="font-size:medium; color: rgb(18, 17, 22);"> <a (click)="viewResume(data.id)">View</a></span></div>
                 <hr >
                 
             </div>

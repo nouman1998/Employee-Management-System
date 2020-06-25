@@ -35,5 +35,7 @@ export class PersonalDashboardComponent implements OnInit {
     color:'white'
   };
 
-  viewResume(){}
+  viewResume(id){
+    this.router.navigate(['main/resume-view/'+id])
+  }
 }

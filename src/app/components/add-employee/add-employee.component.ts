@@ -86,6 +86,8 @@ export class AddEmployeeComponent implements OnInit {
       jobs: [null],
       leavecode: [null]
       , salaryCode: [null]
+      ,image:[null],
+      DOB:[null]
 
     });
   }
@@ -101,6 +103,9 @@ export class AddEmployeeComponent implements OnInit {
       this.formData.append('salaryCode', this.addEmployee.salaryCode)
       this.formData.append('depart', this.addEmployee.department);
       this.formData.append('job', this.addEmployee.job);
+      this.formData.append('fname',this.addEmployee.father);
+      this.formData.append('profile',this.addEmployee.profile);
+      this.formData.append('dob',this.addEmployee.dob);
       debugger
       this.service.postEmployee(this.formData).subscribe(d => {
         this.message.success("Employee Added Successfully", { nzDuration: 3000 })
@@ -113,12 +118,15 @@ export class AddEmployeeComponent implements OnInit {
       this.formData.append('mobileNumber', (this.addEmployee.mobileNumber).toString());
       this.formData.append('email', this.addEmployee.email);
       this.formData.append('address', this.addEmployee.address);
-      this.formData.append('pay', (this.addEmployee.pay));
+      // this.formData.append('pay', (this.addEmployee.pay));
       this.formData.append('resume', this.addEmployee.resume);
       this.formData.append('leaveCode', this.addEmployee.leavecode);
       this.formData.append('salaryCode', this.addEmployee.salaryCode)
       this.formData.append('depart', this.addEmployee.department);
       this.formData.append('job', this.addEmployee.job);
+      this.formData.append('fname',this.addEmployee.father);
+      this.formData.append('profile',this.addEmployee.profile);
+      this.formData.append('dob',this.addEmployee.dob);
       this.service.updateEmployee(this.id, this.addEmployee).subscribe(d => {
         this.message.success("Employee Updated Successfully", { nzDuration: 3000 })
         this.erasingFields();
@@ -137,6 +145,9 @@ export class AddEmployeeComponent implements OnInit {
     this.addEmployee.department = "";
     this.addEmployee.job = "";
     this.addEmployee.leavecode = ""
+    this.addEmployee.profile=null;
+    this.addEmployee.dob="";
+    this.addEmployee.father="";
 
     this.formData.delete('name');
     this.formData.delete('mobileNumber');
@@ -206,6 +217,10 @@ export class AddEmployeeComponent implements OnInit {
     // this.Checker = true;
 
 
+  }
+
+  handleProfileBanner(files:FileList){ 
+    this.addEmployee.profile=files[0];
   }
 
 
