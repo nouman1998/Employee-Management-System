@@ -11,4 +11,7 @@ export class employee{
     leavecode:string
     pay
     salaryCode:string
+    dob:string
+    father:string 
+    profile:File
 }

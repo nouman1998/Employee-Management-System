@@ -47,9 +47,31 @@
   <div nz-row>
     <div nz-col nzSpan="10">
       <nz-form-item>
-        <nz-form-control nzErrorTip="Please input your Pay!">
+        <nz-form-control nzErrorTip="Please input your Date of Birth!">
           <nz-input-group nzPrefixIcon="">
-            <input formControlName="pay" nz-input type="text" [(ngModel)]= "addEmployee.pay" placeholder="Pay" />
+            <input formControlName="DOB" nz-input type="email" [(ngModel)]= "addEmployee.dob" placeholder="Date of Birth" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+
+    <div nz-col nzSpan="10" nzOffset="4">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your Father Name!">
+          <nz-input-group nzPrefixIcon="">
+            <input formControlName="address" nz-input type="text" [(ngModel)]= "addEmployee.father" placeholder="Father Name" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+
+  <div nz-row>
+    <div nz-col nzSpan="10">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please upload your Recent Picture!">
+          <nz-input-group nzPrefixIcon="">
+            <input  formControlName="image" nz-input type="file" placeholder="Image" (change)="handleProfileBanner($event.target.files)" />
           </nz-input-group>
         </nz-form-control>
       </nz-form-item>
