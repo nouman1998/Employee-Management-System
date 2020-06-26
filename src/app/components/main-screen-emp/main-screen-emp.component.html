@@ -1,1 +1,27 @@
-<p>main-screen-emp works!</p>
+<div style="float: right;">
+    <button nz-button nzType="primary" (click)="showModal()">Attendence</button>
+    <nz-modal
+      [(nzVisible)]="isVisible"
+      nzTitle="Employee Attendence"
+      nzOkText="Ok"
+      nzCancelText="Cancel"
+      (nzOnOk)="handleOk()"
+      (nzOnCancel)="handleCancel()"
+    >
+    <div>
+        <h6>Employee ID</h6>
+        <input nz-input  placeholder="Employee ID" [(ngModel)]="mainAttendanceObj.employeeId" nzSize="large" />
+        <br>
+        <br>
+        <h6>Employee Name</h6>
+        <input nz-input  placeholder="Employee Name" [(ngModel)]="mainAttendanceObj.name" nzSize="large" />
+        <br>
+        <br>
+        <h6>Attendence Mark</h6>
+        <nz-radio-group [(ngModel)]="mainAttendanceObj.attendance">
+            <label nz-radio nzValue="Present">Present</label>
+            <label nz-radio nzValue="Absent">Absent</label> 
+        </nz-radio-group>
+    </div>
+    </nz-modal>
+  </div>
