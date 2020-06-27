@@ -43,7 +43,14 @@ import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { ResumeViewComponent } from './components/resume-view/resume-view.component';
 import { PersonalDashboardComponent } from './personal-dashboard/personal-dashboard.component';
+
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+
+
 import { NzRadioModule } from 'ng-zorro-antd/radio';
+
 
 
 registerLocaleData(en);
@@ -94,7 +101,14 @@ registerLocaleData(en);
     NzSelectModule,
     NzModalModule,
     NzAvatarModule,
+
+    NzSpinModule,
+    NzAlertModule
+    
+
+
     NzRadioModule
+
     
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

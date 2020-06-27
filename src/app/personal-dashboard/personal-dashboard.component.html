@@ -1,8 +1,10 @@
-<div style="background-color:rgb(231, 231, 231); height: 100%;; " nz-row>
+<div  *ngIf="data" style="background-color:rgb(231, 231, 231); height: 100%;; " nz-row>
     <div nz-col nzSpan="6" style="background-color: rgb(239, 243, 247); border-right: royalblue;">
 
         <div style="width: 100%; text-align:center;">
-            <nz-avatar [nzSize]="140" nzIcon="user"></nz-avatar>
+            <nz-avatar *ngIf="!data.profile"  [nzSize]="140" nzIcon="user"></nz-avatar>
+            <img *ngIf="data.profile" src={{data.profile}} alt="Avatar">
+
 
         </div>
         <div>
@@ -11,7 +13,7 @@
             <div *ngIf="data" style="text-align: center;margin-top: 30px;">
                 <nz-card>
                     <div nz-card-grid [ngStyle]="gridStyle">At Work for:</div>
-                    <div nz-card-grid [ngStyle]="gridStyle">1 year 3 months </div>
+                    <div nz-card-grid [ngStyle]="gridStyle">{{year}} years  and {{days}} Days </div>
 
                 </nz-card>
             </div>
@@ -179,5 +181,13 @@
 
 
 
+</div>
+
+
+<div *ngIf="!data" style="margin-top: 10%; text-align: center; ">
+
+    <nz-spin nzTip="Loading...">
+      
+      </nz-spin>
 </div>
 
