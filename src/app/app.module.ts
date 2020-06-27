@@ -103,7 +103,7 @@ registerLocaleData(en);
     NzAvatarModule,
 
     NzSpinModule,
-    NzAlertModule
+    NzAlertModule,
     
 
 

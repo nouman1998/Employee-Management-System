@@ -41,7 +41,7 @@ export class PersonalDashboardComponent implements OnInit {
 		// this.week = Math.floor((Difference_In_Days % 365) /7); 
     this.days = Math.floor((Difference_In_Days % 365) % 7);
     console.log(this.year);
-    console.log(this.week) 
+    // console.log(this.week) 
     console.log(this.days);
      console.log(secondDate); 
 
