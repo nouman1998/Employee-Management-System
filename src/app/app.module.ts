@@ -40,14 +40,16 @@ import { AddLeaveCodeComponent } from './components/add-leave-code/add-leave-cod
 import { ListLeaveCodeComponent } from './components/list-leave-code/list-leave-code.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
-
-
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { ResumeViewComponent } from './components/resume-view/resume-view.component';
 import { PersonalDashboardComponent } from './personal-dashboard/personal-dashboard.component';
+
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 import { NzAlertModule } from 'ng-zorro-antd/alert';
+
+
+import { NzRadioModule } from 'ng-zorro-antd/radio';
 
 
 
@@ -99,9 +101,13 @@ registerLocaleData(en);
     NzSelectModule,
     NzModalModule,
     NzAvatarModule,
+
     NzSpinModule,
     NzAlertModule
     
+
+
+    NzRadioModule
 
     
   ],

@@ -59,6 +59,7 @@ export class MainServiceService {
   private getTotalJobCodeCountURL = this.baseurl+'dashboard/totaljobcode';
   private getTotalLeaveCodeCountURL = this.baseurl+'dashboard/totalleavecode';
   private getTotalSumOfSalariesURL = this.baseurl+'dashboard/totalsalaries'
+  private postAttendanceURL = this.baseurl+'attendance/post';
 
 
 
@@ -186,6 +187,10 @@ export class MainServiceService {
 
   public getTotalSumOfSalaries():Observable<any>{
     return this.http.get(this.getTotalSumOfSalariesURL);
+  }
+
+  public postAttendance(obj):Observable<any>{
+    return this.http.post(this.postAttendanceURL,obj)
   }
 
 }
